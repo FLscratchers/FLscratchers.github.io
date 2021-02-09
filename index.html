@@ -1,6 +1,56 @@
-<html><head><title>FL Lotto Scratchers</title></head>
+<html><head><title>FL Lotto Scratchers Reports</title></head>
 <body>
-<a href='smReport_20210207.html'>02/07/2021 Report</a>
+	<h2> Florida Lottery Scratch Off Detailed Analysis by Game <h2>
+	<h4>Analysis reports by day</h4>
+	<ul>
+		<li><a href='smReport_20210207.html'>02/07/2021 Report</a>
+	</ul>
 <br>
-<a href='smDiffs_20210204_20210207.html'>Diifs 02/04/2021 - 02/07/2021</a>
+	<h4>Comparisons between two days - what got sold/claimed</h4>
+	<ul>
+		<li><a href='smDiffs_20210204_20210207.html'>Diifs 02/04/2021 - 02/07/2021</a>
+	</ul>
+
+
+<br><br>
+	<h4>Notes on how this was done</h4>
+	<ul>
+		This was created by a retired software developer using Java code that had too much time on his hands during the pandemic for his own use.
+		I have been using this for the past few months, and thought it might be helpful to others.
+	</ul>	
+	<ul>
+		<li>Data is scraped off and saved from the FL lottery 'Remaining Top Prizes' page and the detail pages for the games
+		<li>Most of the reporting is easily done by simple math given the data the FL lottery publishes on these pages
+		<li>Other data that is not directly derived from this is calculated as follows
+		<ul>
+			<li>Total number of tickets in the game:  Add up the number of prizes from each level and multiply by the overall odds on the game. Seems reasonable.
+			<li>Percentage of tickets sold or remaining:  This is my 'best guess' - using this reasoning
+			<ul>
+				<li>The lowest prize amounts are the most plentiful, and this assumes they are spead out fairly evenly throughout the game.
+				<li>This takes the lowest two prize levels, grabs the 'Total Prizes' and 'Prizes Remaining' for those two levels, and computes the percentage of those prize levels that are remaining to be won (and also what has been won).
+				<li>It then multiplies that percentage by the total number of tickets in the game (see above), giving us the number of tickets sold so far (and the number that remain to be sold).
+				<li>Those numbers are then used to calculate the rest of the reports
+			</ul>					
+		</ul>
+			<li>The Detailed Analysis by Game contains the following sections.  These are all based on the projections listed above.
+			<ul>
+				<li>Newer games (less than 6 months old
+				<li>Games ranked by odds of winning $500,000 or more
+				<li>Games ranked by odds of winning $500 or more
+				<li>Games ranked by payout percentage for all remaining tickets  (I find this report most useful)	
+				<li>Games ranked by the best improved odds of winning the top prize (the biggest difference bewteen the original odds vs the current odds)	
+				<li>Games ranked by total payout of all tickets (this is when a game is brand new with no tickets sold).  You can see the biggest the ticket cost - the better the payout
+				<li>A detailed report for each game - listing each prize level, original odds, current odds, percents claimed/remaining, etc), along with many other details	
+			</ul>		
+			<li>The Comparisons between two days report. It takes two days of lotto data, and calcuates what was claimed, what was sold, etc. based on those assumptions above. It is interesting to see what was sold, and what was claimed.
+			<ul>
+				<li>Games ranked by best payout percentage between those two dates
+				<li>Games sorted bu dollar amount of tickets sold
+			</ul>		
+	</ul>
+
+<br>
+<h4>Let me know what you think - comments and constructive criticism welcomed -  Enjoy</h4>
+	
+
 </body></html>
